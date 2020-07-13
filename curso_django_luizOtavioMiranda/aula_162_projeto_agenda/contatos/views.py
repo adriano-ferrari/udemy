@@ -46,7 +46,7 @@ def busca(request):
         Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo)
     )
 
-    paginator = Paginator(contatos, 5)
+    paginator = Paginator(contatos, 10)
     page = request.GET.get('p')
     contatos = paginator.get_page(page)
 
